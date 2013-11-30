@@ -73,8 +73,8 @@
     </build>
 
     <properties>
-        <spring.version>3.1.1.RELEASE</spring.version>
-        <hibernate.version>4.1.1.Final</hibernate.version>
+        <spring.version>3.2.5.RELEASE</spring.version>
+        <hibernate.version>4.2.7.Final</hibernate.version>
     </properties>
 
 

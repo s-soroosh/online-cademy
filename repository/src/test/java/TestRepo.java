@@ -40,6 +40,7 @@ public class TestRepo extends AbstractTransactionalJUnit4SpringContextTests {
         List<Student> all = studentRepository.findAll();
         System.out.println(all.size());
     }
+
     @Test
     @Rollback(false)
     public void p() {
