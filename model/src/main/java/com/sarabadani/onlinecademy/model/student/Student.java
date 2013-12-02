@@ -93,4 +93,19 @@ public class Student {
         return verificationCode;
     }
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "verificationCode='" + verificationCode + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                ", grade=" + grade +
+                ", status=" + status +
+                '}';
+    }
 }
