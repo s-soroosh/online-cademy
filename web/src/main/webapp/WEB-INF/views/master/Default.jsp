@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"></spring:url>
 <spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"></spring:url>
 <spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"></spring:url>
@@ -37,11 +38,14 @@
             </form>
             <ul>
                 <li><a href="#"></a></li>
-                <li class="active"><strong>Active</strong></li>
+           <%--     <li class="active"><strong>Active</strong></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>--%>
+                <c:forEach items="${menu}" var="m">
+                    <li><a href="#">${m}</a></li>
+                </c:forEach>
             </ul>
         </div>
     </nav>
