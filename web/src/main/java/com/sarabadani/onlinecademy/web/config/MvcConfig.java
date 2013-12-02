@@ -24,17 +24,6 @@ import java.util.Date;
 @ComponentScan(basePackages = {"com.sarabadani.onlinecademy.web.mvc"})
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
-
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(dateConverter());
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addWebRequestInterceptor(menuInterceptor());
-    }
-
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -43,28 +32,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**/*", "/resources/**").addResourceLocations("/WEB-INF/web-resources/");
-    }
-
-    @Bean
-    public WebRequestInterceptor menuInterceptor() {
-         return new MenuInterceptor();
-    }
-
-    @Bean
-    public Converter<String,Date> dateConverter() {
-        return new DateConverter();
-    }
-
-    @Bean
-    public TilesConfigurer tilesConfigurer() {
-        return new TilesConfigurer();
-    }
-
-    @Bean
-    public TilesViewResolver tilesViewResolver() {
-        TilesViewResolver tilesViewResolver = new TilesViewResolver();
-        tilesViewResolver.setOrder(0);
-        return tilesViewResolver;
     }
 
 }

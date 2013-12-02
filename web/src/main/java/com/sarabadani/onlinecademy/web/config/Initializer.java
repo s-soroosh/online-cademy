@@ -18,6 +18,9 @@ public class Initializer implements WebApplicationInitializer {
             throws ServletException {
         AnnotationConfigWebApplicationContext mvcContext = new AnnotationConfigWebApplicationContext();
         mvcContext.register(MvcConfig.class);
+        mvcContext.register(InterceptorConfig.class);
+        mvcContext.register(FormatterConfig.class);
+        mvcContext.register(ViewConfig.class);
 
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
                 "dispatcher", new DispatcherServlet(mvcContext));
