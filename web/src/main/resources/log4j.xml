@@ -10,8 +10,8 @@
         </layout>
     </appender>
 
-    <logger name="org.springframework.web">
-        <level value="info" />
+    <logger name="org.springframework">
+        <level value="debug" />
     </logger>
 
 
