@@ -5,6 +5,7 @@ import com.sarabadani.onlinecademy.web.interceptors.MenuInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.context.request.WebRequestInterceptor;
@@ -22,6 +23,7 @@ import java.util.Date;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.sarabadani.onlinecademy.web.mvc"})
+@ImportResource({"classpath*:service-context.xml"})
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
