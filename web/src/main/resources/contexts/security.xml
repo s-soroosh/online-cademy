@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:http auto-config="true">
+        <security:intercept-url pattern="/student/*" access="ROLE_STUDENT"/>
+        <security:intercept-url pattern="/teacher/*" access="ROLE_TEACHER"/>
+        <security:intercept-url pattern="/admin/*" access="ROLE_ADMIN"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="admin" password="123456" authorities="ROLE_ADMIN"/>
+                <security:user name="student" password="123456" authorities="ROLE_STUDENT"/>
+                <security:user name="teacher" password="123456" authorities="ROLE_TEACHER"/>
+            </security:user-service>
+        </security:authentication-provider>
+
+    </security:authentication-manager>
+</beans>
