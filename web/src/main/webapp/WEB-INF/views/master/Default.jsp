@@ -4,7 +4,8 @@
 <spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"></spring:url>
 <spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"></spring:url>
 <spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"></spring:url>
-
+<spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"></spring:url>
+<spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"></spring:url>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -22,6 +23,9 @@
     <!--[if lte IE 7]>
     <link href="${iehacksUrl}" rel="stylesheet" type="text/css"/>
     <![endif]-->
+
+    <link href="${bootstrapCssUrl}" rel="stylesheet" type="text/css"/>
+    <link href="${responsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
