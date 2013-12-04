@@ -6,6 +6,10 @@
 <spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"></spring:url>
 <spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"></spring:url>
 <spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"></spring:url>
+
+<spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"></spring:url>
+<spring:url value="/resources/bootstrap/css/rtl/bootstrap-rtl.min.css" var="rtlBootstrapCssUrl"></spring:url>
+<spring:url value="/resources/bootstrap/css/rtl/bootstrap-responsive-rtl.min.css" var="rtlResponsiveBootstrapCssUrl"></spring:url>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -27,6 +31,9 @@
     <link href="${bootstrapCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${responsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
 
+     <link href="${rtlCssUrl}" rel="stylesheet" type="text/css"/>
+     <link href="${rtlBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
+     <link href="${rtlResponsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
