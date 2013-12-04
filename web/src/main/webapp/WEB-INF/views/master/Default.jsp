@@ -7,26 +7,26 @@
 <spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"></spring:url>
 <spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"></spring:url>
 
+
 <spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"></spring:url>
 <spring:url value="/resources/bootstrap/css/rtl/bootstrap-rtl.min.css" var="rtlBootstrapCssUrl"></spring:url>
 <spring:url value="/resources/bootstrap/css/rtl/bootstrap-responsive-rtl.min.css" var="rtlResponsiveBootstrapCssUrl"></spring:url>
+
+<spring:url value="/resources/bootstrap/js/jquery.min.js" var="jqueryJsUrl"></spring:url>
+<spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"></spring:url>
+<spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"></spring:url>
+
+<spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"></spring:url>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
     <meta charset="utf-8"/>
-    <title>Demo: RTL Support &ndash; YAML CSS Framework</title>
+    <title>Twitter Bootstrap Theme Demo</title>
 
     <!-- Mobile viewport optimisation -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- (en) Add your meta data here -->
-    <!-- (de) Fuegen Sie hier ihre Meta-Daten ein -->
-
-    <link href="${rtlSuppotCssUrl}" rel="stylesheet" type="text/css"/>
-    <!--[if lte IE 7]>
-    <link href="${iehacksUrl}" rel="stylesheet" type="text/css"/>
-    <![endif]-->
 
     <link href="${bootstrapCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${responsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
@@ -34,78 +34,74 @@
      <link href="${rtlCssUrl}" rel="stylesheet" type="text/css"/>
      <link href="${rtlBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
      <link href="${rtlResponsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+     <link href="${farsiFontsCssUrl}" rel="stylesheet" type="text/css"/>
+     <style>
+     /*applying fonts*/
+
+     a
+     {
+         font-family:Yekan;
+     }
+     li
+     {
+         font-family:Bardiya;
+     }
+     </style>
 </head>
 <body class="demo-2col" style="padding-top:30px;">
-<div style="">
-
-    <nav style="position:fixed; width:100%;left:0px; top:0px;" id="nav">
-        <div class="ym-hlist">
-            <form class="ym-searchform">
-                <input class="ym-searchbutton" value="Search" type="submit">
-                <input class="ym-searchfield" placeholder="Search..." type="search">
-            </form>
-            <ul>
-                <li><a href="#"></a></li>
-           <%--     <li class="active"><strong>Active</strong></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>--%>
-                <c:forEach items="${menu}" var="m">
-                    <li><a href="#">${m}</a></li>
-                </c:forEach>
-            </ul>
-        </div>
-    </nav>
-</div>
-<ul class="ym-skiplinks">
-    <li><a class="ym-skip" href="#nav">Skip to navigation (Press Enter)</a></li>
-    <li><a class="ym-skip" href="#main">Skip to main content (Press Enter)</a></li>
-</ul>
-
-<div class="ym-wrapper">
-    <div id="main">
-        <div class="ym-column linearize-level-1">
-            <div class="ym-col1">
-                <tiles:insertAttribute name="body"/>
-            </div>
-            <aside class="ym-col3">
-                <div class="ym-cbox">
-                    <h2>Sidebar</h2>
-                    <h4>Widget A</h4>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                        <li>Item 5</li>
-                    </ul>
-                    <h4>Widget B</h4>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <h4>Widget C</h4>
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
+ <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a href="index.html" class="brand brand-bootbus">اینجا جای لگوی آکادمی است </a>
+                <!-- Below button used for responsive navigation -->
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar">123</span> <span class="icon-bar">456</span> <span class="icon-bar">
+                        789</span>
+                </button>
+                <!-- Start: Primary navigation -->
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">لیست
+                            دوره های جاری<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">دوره های آغاز شده</li>
+                                <li><a href="product.html">ASP.NET</a></li>
+                                <li><a href="product.html">C Sharp</a></li>
+                                <li><a href="product.html">Entity Framework</a></li>
+                                <li><a href="all_products.html">Linq</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">دوره های در حال ثبت نام</li>
+                                <li><a href="service.html">Java مقدماتی</a></li>
+                                <li><a href="service.html">Scala مقدماتی</a></li>
+                                <li><a href="service.html"> آشنایی با Fortran</a></li>
+                                <li><a href="service.html"> برنامه نویسی تحت وب با QBasic</a></li>
+                                <li><a href="service.html">کارگاه سیستم های خبره یا     Expert Systems  </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">درباره ی ما<b
+                            class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="our_works.html">تیم ما</a></li>
+                                <li><a href="patnerships.html">پشتیبانی مالی</a></li>
+                                <li><a href="leadership.html">همکاری فنی</a></li>
+                                <li><a href="news.html">همکاری در کادر آموزش</a></li>
+                                <li><a href="events.html">رویداد ها</a></li>
+                                <li><a href="blog.html">روزنوشت ها</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="faq.html">سوالات رایج</a></li>
+                        <li><a href="contact_us.html">تماس با ما</a></li>
+                        <li><a href="signup.html">عضویت</a></li>
+                        <li><a href="signin.html">ورود</a></li>
                     </ul>
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
-    <footer>
-        <p>© Company 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
-    </footer>
-</div>
-</div>
 
-<!-- full skip link functionality in webkit browsers -->
-<script src="${focusfixUrl}"></script>
+<script src="${jqueryJsUrl}"></script>
+<script src="${bootstrapJsUrl}"></script>
+<script src="${customJsUrl}"></script>
+
 </body>
 </html>
