@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-     <parent>
-         <groupId>com.sarabadani.onlinecademy</groupId>
-         <artifactId>online-cademy</artifactId>
-         <version>1.0-SNAPSHOT</version>
-     </parent>
+    <parent>
+        <groupId>com.sarabadani.onlinecademy</groupId>
+        <artifactId>online-cademy</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <groupId>com.sarabadani.onlinecademy</groupId>
     <artifactId>model</artifactId>
 
@@ -29,12 +29,19 @@
             <artifactId>icu4j</artifactId>
             <version>3.4.4</version>
         </dependency>
-          <!--      <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-core</artifactId>
-                    <version>3.1.1.RELEASE</version>
-                </dependency>-->
+
+        <!--   Security Dependencies -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <!--      <dependency>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring-core</artifactId>
+                  <version>3.1.1.RELEASE</version>
+              </dependency>-->
     </dependencies>
 
-    
+
 </project>

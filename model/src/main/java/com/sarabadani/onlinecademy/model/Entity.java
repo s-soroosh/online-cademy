@@ -1,17 +1,19 @@
 package com.sarabadani.onlinecademy.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 
 /**
  * Author: Soroosh Sarabadani
  * Date: 3/8/13
  * Time: 10:52 AM
  */
-@javax.persistence.Entity
-public class Entity {
+@MappedSuperclass
+public abstract class Entity {
+
+    public Long getId() {
+        return id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

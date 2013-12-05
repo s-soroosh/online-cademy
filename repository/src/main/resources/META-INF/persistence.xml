@@ -9,6 +9,8 @@
 
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.sarabadani.onlinecademy.model.student.Student</class>
+        <class>com.sarabadani.onlinecademy.model.user.User</class>
+        <class>com.sarabadani.onlinecademy.model.user.Authority</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.show_sql" value="true"/>

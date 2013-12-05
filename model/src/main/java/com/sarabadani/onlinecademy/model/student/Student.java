@@ -1,9 +1,11 @@
 package com.sarabadani.onlinecademy.model.student;
 
+import com.sarabadani.onlinecademy.model.*;
 import org.hibernate.annotations.Index;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.UUID;
 
@@ -13,12 +15,10 @@ import java.util.UUID;
  * Time: 8:01 AM
  */
 @Entity
-public class Student {
+public class Student extends com.sarabadani.onlinecademy.model.Entity {
 
     private final String verificationCode;
-    @Id
-    @GeneratedValue
-    private Long id;
+
     private String name;
     private String lastName;
     @Column(unique = true, nullable = false, updatable = false)
@@ -53,13 +53,13 @@ public class Student {
 
     }
 
-    public Long getId() {
-        return id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
 
     public void verify(String verificationCode) {
         if (this.status == StudentStatus.BLOCKED) {
-            throw new StudentBlockedException(String.format("Student with id:%s is blocked so can't verify its account.", this.id));
+            throw new StudentBlockedException(String.format("Student with id:%s is blocked so can't verify its account.", this.getId()));
         }
         if (this.verificationCode.equals(verificationCode)) {
             this.status = StudentStatus.VERIFIED;
@@ -99,7 +99,6 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "verificationCode='" + verificationCode + '\'' +
-                ", id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

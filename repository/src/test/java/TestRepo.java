@@ -1,6 +1,7 @@
 import com.sarabadani.commons.repository.StudentRepository;
 import com.sarabadani.onlinecademy.model.student.Grade;
 import com.sarabadani.onlinecademy.model.student.Student;
+import junit.framework.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
@@ -38,7 +39,9 @@ public class TestRepo extends AbstractTransactionalJUnit4SpringContextTests {
     public void v() {
         studentRepository.save(new Student("soroosh", "sarabadani", "soroosh.sarabadani@gmail.com", new Date(), Grade.MASTER));
         List<Student> all = studentRepository.findAll();
-        System.out.println(all.size());
+
+        Assert.assertEquals(all.size(),1);
+
     }
 
     @Test
