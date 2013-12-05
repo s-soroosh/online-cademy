@@ -17,6 +17,8 @@
 <spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"></spring:url>
 
 <spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"></spring:url>
+<spring:url value="/resources/styles/main.css" var="mainCssUrl"></spring:url>
+
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -35,18 +37,7 @@
      <link href="${rtlBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
      <link href="${rtlResponsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
      <link href="${farsiFontsCssUrl}" rel="stylesheet" type="text/css"/>
-     <style>
-     /*applying fonts*/
-
-     a
-     {
-         font-family:Yekan;
-     }
-     li
-     {
-         font-family:Bardiya;
-     }
-     </style>
+     <link href="${mainCssUrl}" rel="stylesheet" type="text/css"/>
 </head>
 <body class="demo-2col" style="padding-top:30px;">
  <div class="navbar navbar-fixed-top">
@@ -91,8 +82,35 @@
                         </li>
                         <li><a href="faq.html">سوالات رایج</a></li>
                         <li><a href="contact_us.html">تماس با ما</a></li>
-                        <li><a href="signup.html">عضویت</a></li>
-                        <li><a href="signin.html">ورود</a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">کاربران
+                                                    <b
+                                                        class="caret"></b></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <div id="login_form">
+                                                                <form class="form-inline">
+                                                                    <input id="email" type="text" class="input-small" placeholder="Email">
+                                                                    <input id="password" type="password" class="input-small" placeholder="Password">
+                                                                    <button id="loginbtn" type="submit" class="btn">
+                                                                    ورود
+                                                                    </button>
+                                                                    <label class="checkbox" id="rememberme">
+                                                                        من را به خاطر بسپار
+                                                                    <input id="remembermeCheckbox" type="checkbox">
+                                                                    </label>
+
+
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                        <li><a href="register.html">عضویت</a></li>
+                                                        <li><a href="recovery.html">فراموشی پسورد</a></li>
+                                                        <li><a href="help.html">راهنمایی</a></li>
+
+                                                    </ul>
+                                                </li>
+
+
                     </ul>
                 </div>
             </div>
