@@ -16,7 +16,7 @@ import java.util.List;
 public class User extends Entity implements UserDetails {
 
     //    @OneToMany(targetEntity = Authority.class,cascade = CascadeType.ALL)
-    @ElementCollection(targetClass = Authority.class)
+    @ElementCollection(targetClass = Authority.class,fetch = FetchType.EAGER)
     @CollectionTable(name = "USER_AUTHORITY",
             joinColumns = @JoinColumn(name = "USER_ID"),uniqueConstraints = @UniqueConstraint(columnNames = {"USER_ID","AUTHORITY"}))
     private List<GrantedAuthority> authorities;

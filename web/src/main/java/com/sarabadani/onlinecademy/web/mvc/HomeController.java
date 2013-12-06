@@ -1,5 +1,7 @@
 package com.sarabadani.onlinecademy.web.mvc;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,6 +15,9 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication.isAuthenticated()) System.out.println(authentication.getPrincipal());
         return "Index";
     }
 }
+

@@ -1,5 +1,6 @@
 package com.sarabadani.onlinecademy.web.config;
 
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -27,19 +28,18 @@ public class Initializer implements WebApplicationInitializer {
         mvcContext.register(ViewConfig.class);
 
 
-
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
                 "dispatcher", new DispatcherServlet(mvcContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
 
         servletContext.addFilter("springSecurityFilterChain", DelegatingFilterProxy.class).addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
+        servletContext.addFilter("openSessionViewFilter", OpenEntityManagerInViewFilter.class).addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
 
-       servletContext.setInitParameter("contextConfigLocation","classpath*:contexts/security.xml");
+
+        servletContext.setInitParameter("contextConfigLocation", "classpath*:service-context.xml , classpath*:contexts/security.xml");
 
         servletContext.addListener(ContextLoaderListener.class);
-
-
 
 
     }

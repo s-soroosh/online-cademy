@@ -2,6 +2,8 @@ package com.sarabadani.onlinecademy.web.mvc;
 
 import com.sarabadani.onlinecademy.model.student.Grade;
 import com.sarabadani.onlinecademy.model.student.Student;
+import com.sarabadani.onlinecademy.service.user.SecurityUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,9 @@ import java.util.Date;
  */
 @Controller
 public class RegisterationController {
+
+    @Autowired
+    private SecurityUserService userService;
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String showRegisterPage(ModelMap modelMap) {
         modelMap.addAttribute("grades", Grade.values());

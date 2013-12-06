@@ -23,7 +23,7 @@ import java.util.Date;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.sarabadani.onlinecademy.web.mvc"})
-@ImportResource({"classpath*:service-context.xml","classpath*:contexts/security.xml"})
+//@ImportResource({"classpath*:service-context.xml","classpath*:contexts/security.xml"})
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Override

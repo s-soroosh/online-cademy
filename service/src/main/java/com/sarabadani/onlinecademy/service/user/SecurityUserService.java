@@ -13,8 +13,11 @@ import org.springframework.stereotype.Service;
  * Date: 12/6/13
  * Time: 6:15 PM
  */
-@Service
+@Service("securityUserService")
 public class SecurityUserService implements UserDetailsService {
+    public SecurityUserService(){
+        System.out.println("New UserService created.");
+    }
 
     @Autowired
     private UserRepository userRepository;
