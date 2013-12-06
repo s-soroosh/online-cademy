@@ -4,7 +4,6 @@ import com.sarabadani.onlinecademy.model.user.User;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
@@ -12,7 +11,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
  * Created by soroosh on 12/5/13.
  */
 @ContextConfiguration(locations = "classpath*:data-test-context.xml")
-public class UserRepoTest extends AbstractTransactionalJUnit4SpringContextTests {
+public class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
 
     public static final String SOROOSH = "soroosh";
     public static final String PASS = "123456";
@@ -70,5 +69,13 @@ public class UserRepoTest extends AbstractTransactionalJUnit4SpringContextTests 
         gotUser.addAuthority("STUDENT");
 
 
+    }
+
+
+    @Test
+    public void should_return_null_when_user_does_not_exist(){
+        final User usr = userRepository.findByUsername(SOROOSH);
+
+        Assert.assertNull(usr);
     }
 }
