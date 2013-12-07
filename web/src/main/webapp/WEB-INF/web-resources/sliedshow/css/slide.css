@@ -1,0 +1,139 @@
+
+
+
+#slides .slidesjs-navigation {
+    margin-top:3px;
+}
+
+#slides .slidesjs-previous {
+    margin-right: 5px;
+    float: left;
+}
+
+#slides .slidesjs-next {
+    margin-right: 5px;
+    float: left;
+}
+
+.slidesjs-pagination {
+    margin: 6px 0 0;
+    float: right;
+    list-style: none;
+}
+
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(img/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active,
+.slidesjs-pagination li a:hover.active {
+    background-position: 0 -13px
+}
+
+.slidesjs-pagination li a:hover {
+    background-position: 0 -26px
+}
+
+
+
+#slides {
+    display: none
+}
+
+.slideshowContainer {
+    margin: 0 auto
+}
+
+/* For tablets & smart phones */
+@media (max-width: 767px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .slideshowContainer {
+        width: auto
+    }
+}
+
+/* For smartphones */
+@media (max-width: 480px) {
+    .slideshowContainer {
+        width: auto
+    }
+}
+
+/* For smaller displays like laptops */
+@media (min-width: 768px) and (max-width: 979px) {
+    .slideshowContainer {
+        width: 724px
+    }
+}
+
+/* For larger displays */
+@media (min-width: 1200px) {
+    .slideshowContainer {
+        width: 1170px
+    }
+}
+/* Prevent the slideshow from flashing on load */
+#slides {
+    display: none
+}
+
+/* Center the slideshow */
+.slideshowContainer {
+    margin: 0 auto;
+    height: 210px;
+    width: 400px;
+}
+
+/* Show active item in the pagination */
+.slidesjs-pagination .active {
+    color:red;
+}
+
+/* Media quires for a responsive layout */
+
+/* For tablets & smart phones */
+@media (max-width: 767px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .slideshowContainer {
+        width: auto
+    }
+
+
+    /* For smartphones */
+    @media (max-width: 480px) {
+        .slideshowContainer {
+            width: auto
+        }
+    }
+
+    /* For smaller displays like laptops */
+    @media (min-width: 768px) and (max-width: 979px) {
+        .slideshowContainer {
+            width: 724px
+        }
+    }
+
+    /* For larger displays */
+    @media (min-width: 1200px) {
+        .slideshowContainer {
+            width: 1170px
+        }
+    }

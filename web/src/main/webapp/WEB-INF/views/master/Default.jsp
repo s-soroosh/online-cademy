@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"></spring:url>
 <spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"></spring:url>
@@ -22,6 +23,9 @@
 <spring:url value="/j_spring_security_check" var="loginUrl"></spring:url>
 
 
+<spring:url value="/resources/sliedshow/js/jquery.slides.min.js" var="slideshowJsUrl"></spring:url>
+<spring:url value="/resources/sliedshow/css/slide.css" var="slideshowCssUrl"></spring:url>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -40,6 +44,11 @@
     <link href="${rtlResponsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${farsiFontsCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${mainCssUrl}" rel="stylesheet" type="text/css"/>
+
+
+    <!-- this line should removed as soon as possible -->
+    <link href="${slideshowCssUrl}" rel="stylesheet" type="text/css"/>
+    <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 </head>
 <body class="demo-2col" style="padding-top:30px;">
 <div class="navbar navbar-fixed-top">
@@ -134,11 +143,24 @@
     <sec:authorize access="isAuthenticated()">
         welcome: <sec:authentication property="principal.username"/>
     </sec:authorize>
+    <tiles:insertAttribute name="body"/>
 </div>
 
 <script src="${jqueryJsUrl}"></script>
 <script src="${bootstrapJsUrl}"></script>
 <script src="${customJsUrl}"></script>
-
+    <!-- SlidesJS Required: Link to jquery.slides.js -->
+    <script src="${slideshowJsUrl}"></script>
+    <!-- End SlidesJS Required -->
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+    $(function () {
+        $('#slides').slidesjs({
+            width: 400,
+            height: 200,
+            navigation: true
+        });
+    });
+    </script>
 </body>
 </html>
