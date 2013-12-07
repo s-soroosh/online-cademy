@@ -1,25 +1,26 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"></spring:url>
-<spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"></spring:url>
-<spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"></spring:url>
-<spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"></spring:url>
-<spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"></spring:url>
+<spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"/>
+<spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"/>
+<spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"/>
+<spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"/>
+<spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"/>
 
 
-<spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"></spring:url>
-<spring:url value="/resources/bootstrap/css/rtl/bootstrap-rtl.min.css" var="rtlBootstrapCssUrl"></spring:url>
+<spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"/>
+<spring:url value="/resources/bootstrap/css/rtl/bootstrap-rtl.min.css" var="rtlBootstrapCssUrl"/>
 <spring:url value="/resources/bootstrap/css/rtl/bootstrap-responsive-rtl.min.css"
-            var="rtlResponsiveBootstrapCssUrl"></spring:url>
+            var="rtlResponsiveBootstrapCssUrl"/>
 
-<spring:url value="/resources/bootstrap/js/jquery.min.js" var="jqueryJsUrl"></spring:url>
-<spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"></spring:url>
-<spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"></spring:url>
+<spring:url value="/resources/bootstrap/js/jquery.min.js" var="jqueryJsUrl"/>
+<spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"/>
+<spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"/>
 
-<spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"></spring:url>
-<spring:url value="/resources/styles/main.css" var="mainCssUrl"></spring:url>
-<spring:url value="/j_spring_security_check" var="loginUrl"></spring:url>
+<spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"/>
+<spring:url value="/resources/styles/main.css" var="mainCssUrl"/>
+<spring:url value="/j_spring_security_check" var="loginUrl"/>
+<spring:url value="/logout" var="logoutUrl"/>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -89,35 +90,35 @@
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <sec:authorize access="isAnonymous()">
-                            <li>
+                                <li>
 
 
-                                <div id="login_form">
-                                    <form class="form-inline" method="post" action="${loginUrl}">
-                                        <input id="email" type="text" class="input-small" name="j_username"
-                                               placeholder="Email">
-                                        <input id="password" type="password" class="input-small" name="j_password"
-                                               placeholder="Password">
-                                        <button id="loginbtn" type="submit" class="btn" name="submit">
-                                            ورود
-                                        </button>
-                                        <label class="checkbox" id="rememberme">
-                                            من را به خاطر بسپار
-                                            <input id="remembermeCheckbox" type="checkbox">
-                                        </label>
+                                    <div id="login_form">
+                                        <form class="form-inline" method="post" action="${loginUrl}">
+                                            <input id="email" type="text" class="input-small" name="j_username"
+                                                   placeholder="Email">
+                                            <input id="password" type="password" class="input-small" name="j_password"
+                                                   placeholder="Password">
+                                            <button id="loginbtn" type="submit" class="btn" name="submit">
+                                                ورود
+                                            </button>
+                                            <label class="checkbox" id="rememberme">
+                                                من را به خاطر بسپار
+                                                <input id="remembermeCheckbox" type="checkbox">
+                                            </label>
 
 
-                                    </form>
-                                </div>
-                            </li>
-                            <li><a href="register.html">عضویت</a></li>
-                            <li><a href="recovery.html">فراموشی پسورد</a></li>
-                            <li><a href="help.html">راهنمایی</a></li>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li><a href="register.html">عضویت</a></li>
+                                <li><a href="recovery.html">فراموشی پسورد</a></li>
+                                <li><a href="help.html">راهنمایی</a></li>
                             </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
-                             <li> <sec:authentication property="principal.username"></sec:authentication>     خوش آمدید </li>
-                             <li><a href="">خروج</a></li>
-                             <li><a htef="">پروفایل من</a></li>
+                                <li><sec:authentication property="principal.username"></sec:authentication> خوش آمدید </li>
+                                <li><a htef="">پروفایل من</a></li>
+                                <li><a href="${logoutUrl}">خروج</a></li>
                             </sec:authorize>
 
                         </ul>
