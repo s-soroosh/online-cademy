@@ -1,0 +1,35 @@
+<dataset>
+
+    <table name="USER">
+        <column>ID</column>
+        <column>VERSION</column>
+        <column>PASSWORD</column>
+        <column>USERNAME</column>
+        <row>
+            <value>1</value>
+            <value>0</value>
+            <value>123456</value>
+            <value>soroosh</value>
+        </row>
+    </table>
+
+    <table name="USER_AUTHORITY">
+        <column>USER_ID</column>
+        <column>AUTHORITY</column>
+        <row>
+            <value>1</value>
+            <value>ADMIN</value>
+
+        </row>
+        <row>
+            <value>1</value>
+            <value>STUDENT</value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>TEACHER</value>
+        </row>
+    </table>
+
+
+</dataset>
