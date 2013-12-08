@@ -27,7 +27,7 @@
 <spring:url value="/resources/sliedshow/js/jquery.slides.min.js" var="slideshowJsUrl"/>
 <spring:url value="/resources/sliedshow/css/slide.css" var="slideshowCssUrl"/>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
