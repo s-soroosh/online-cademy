@@ -5,13 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
     <security:http auto-config="true" use-expressions="true">
+        <security:form-login  authentication-failure-handler-ref=""/>
         <security:intercept-url pattern="/student/*" access="hasRole('STUDENT') "/>
         <security:intercept-url pattern="/teacher/*" access="hasRole('TEACHER')"/>
         <security:intercept-url pattern="/admin/*" access="hasRole('ADMIN')"/>
-        <security:logout logout-url="/logout" logout-success-url="/"></security:logout>
+        <security:logout logout-url="/logout" logout-success-url="/" />
+
+
     </security:http>
 
     <security:authentication-manager>
+
         <security:authentication-provider user-service-ref="securityUserService">
          <!--   <security:user-service>
                 <security:user name="admin" password="123456" authorities="ROLE_ADMIN"/>

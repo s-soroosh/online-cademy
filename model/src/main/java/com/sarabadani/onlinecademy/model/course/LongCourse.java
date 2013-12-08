@@ -1,7 +1,5 @@
 package com.sarabadani.onlinecademy.model.course;//import org.slf4j.Logger;
 
-import com.sarabadani.onlinecademy.model.student.Student;
-
 import java.util.List;
 
 /**
@@ -21,7 +19,7 @@ public class LongCourse extends AbstractCourse {
     private String firstTime;
     private String endTime;
 
-    @Override
+   /* @Override
     public void register(Student student) {
 
 
@@ -31,6 +29,6 @@ public class LongCourse extends AbstractCourse {
     public void unregister(Student student) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
-
+*/
 
 }

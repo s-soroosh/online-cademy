@@ -8,7 +8,6 @@
     <persistence-unit name="h2">
 
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>com.sarabadani.onlinecademy.model.student.Student</class>
         <class>com.sarabadani.onlinecademy.model.user.User</class>
         <class>com.sarabadani.onlinecademy.model.user.Authority</class>
         <properties>

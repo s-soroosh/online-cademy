@@ -1,7 +1,7 @@
 package com.sarabadani.onlinecademy.web.mvc;
 
 import com.sarabadani.onlinecademy.model.student.Grade;
-import com.sarabadani.onlinecademy.model.student.Student;
+import com.sarabadani.onlinecademy.model.user.User;
 import com.sarabadani.onlinecademy.service.user.SecurityUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +21,7 @@ public class RegisterationController {
 
     @Autowired
     private SecurityUserService userService;
+
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String showRegisterPage(ModelMap modelMap) {
         modelMap.addAttribute("grades", Grade.values());
@@ -28,9 +29,9 @@ public class RegisterationController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(String name, String lastName, String email, Date birthDate, Grade grade) {
-        Student student = new Student(name, lastName, email, birthDate, grade);
-        System.out.println(student);
+    public void register(String username,String password,String name, String lastName, String email, Date birthDate, Grade grade) {
+        User user = new User(username,password, name, lastName, email, birthDate, grade);
+        System.out.println(user);
 
     }
 }

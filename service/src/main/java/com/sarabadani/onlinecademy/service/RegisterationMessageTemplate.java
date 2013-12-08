@@ -1,6 +1,6 @@
 package com.sarabadani.onlinecademy.service;
 
-import com.sarabadani.onlinecademy.model.student.Student;
+import com.sarabadani.onlinecademy.model.user.User;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 
 import javax.mail.Message;
@@ -15,17 +15,17 @@ public class RegisterationMessageTemplate implements MimeMessagePreparator {
     private static final String MESSAGE = "<p> Dear {name} {lastName}<br />" +
             "Welcome to Online ACademy.</p>";
 
-    private final Student student;
+    private final User user;
 
-    public RegisterationMessageTemplate(Student student) {
+    public RegisterationMessageTemplate(User user) {
 
-        this.student = student;
+        this.user = user;
     }
 
     @Override
     public void prepare(MimeMessage mimeMessage) throws Exception {
-        mimeMessage.setRecipients(Message.RecipientType.TO, student.getEmail());
-        final String refinedMessage = MESSAGE.replace("{name}", student.getName()).replace("{lastName}", student.getLastName());
+        mimeMessage.setRecipients(Message.RecipientType.TO, user.getEmail());
+        final String refinedMessage = MESSAGE.replace("{name}", user.getName()).replace("{lastName}", user.getLastName());
         mimeMessage.setContent(refinedMessage, "text/html");
     }
 }

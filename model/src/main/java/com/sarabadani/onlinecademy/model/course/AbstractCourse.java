@@ -1,10 +1,8 @@
 package com.sarabadani.onlinecademy.model.course;//import org.slf4j.Logger;
 
 import com.sarabadani.onlinecademy.model.Lecturer;
-import com.sarabadani.onlinecademy.model.student.Student;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author: Soroosh Sarabadani
@@ -20,15 +18,15 @@ public abstract class  AbstractCourse {
     private String description;
     private Integer price;
     private Integer capacity;
-    private List<Student> registeredStudents;
+//    private List<Student> registeredStudents;
     private Lecturer lecturer;
 
     public AbstractCourse() {
         this.createDate = new Date();
     }
 
-    public abstract void register(Student student);
+//    public abstract void register(Student student);
 
-    public abstract void unregister(Student student);
+//    public abstract void unregister(Student student);
 
 }

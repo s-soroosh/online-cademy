@@ -1,6 +1,7 @@
 package com.sarabadani.onlinecademy.service.user;
 
 import com.sarabadani.commons.repository.UserRepository;
+import com.sarabadani.onlinecademy.model.student.Grade;
 import com.sarabadani.onlinecademy.model.user.User;
 import junit.framework.Assert;
 import org.junit.After;
@@ -12,6 +13,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+
+import java.util.Date;
 
 /**
  * Author: Soroosh Sarabadani
@@ -29,7 +32,7 @@ public class SecurityUserServiceTest extends AbstractJUnit4SpringContextTests {
 
     @Before
     public  void before(){
-        User user = new User("soroosh","123456");
+        User user = new User("soroosh","123456","name","lastName","email",new Date(), Grade.ASSOCIATE);
         userRepository.saveAndFlush(user);
 
     }

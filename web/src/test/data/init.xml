@@ -5,11 +5,57 @@
         <column>VERSION</column>
         <column>PASSWORD</column>
         <column>USERNAME</column>
+        <column>BIRTH_DATE</column>
+        <column>EMAIL</column>
+        <column>GRADE</column>
+        <column>LAST_NAME</column>
+        <column>NAME</column>
+        <column>STATUS</column>
+        <column>VERIFICATION_CODE</column>
+        <column>ENABLED</column>
+
+
         <row>
             <value>1</value>
             <value>0</value>
             <value>123456</value>
             <value>soroosh</value>
+            <value>1987-10-05</value>
+            <value>soroosh@goo.com</value>
+            <value>ASSOCIATE</value>
+            <value>سرآبادانی</value>
+            <value>سروش</value>
+            <value>VERIFIED</value>
+            <value>11111</value>
+            <value>true</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>0</value>
+            <value>mahdi</value>
+            <value>mahdi</value>
+            <value>1987-10-05</value>
+            <value>mahdi@goo.com</value>
+            <value>ASSOCIATE</value>
+            <value>زارعی</value>
+            <value>مهدی</value>
+            <value>PENDING</value>
+            <value>11111</value>
+            <value>true</value>
+        </row>
+        <row>
+            <value>3</value>
+            <value>0</value>
+            <value>ali</value>
+            <value>ali</value>
+            <value>1987-10-05</value>
+            <value>ali@goo.com</value>
+            <value>ASSOCIATE</value>
+            <value>علی</value>
+            <value>علی</value>
+            <value>VERIFIED</value>
+            <value>11111</value>
+            <value>false</value>
         </row>
     </table>
 

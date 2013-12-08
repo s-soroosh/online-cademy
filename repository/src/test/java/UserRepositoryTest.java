@@ -1,11 +1,15 @@
 import com.sarabadani.commons.repository.UserRepository;
+import com.sarabadani.onlinecademy.model.student.Grade;
 import com.sarabadani.onlinecademy.model.user.Authority;
 import com.sarabadani.onlinecademy.model.user.User;
 import junit.framework.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+
+import java.util.Date;
 
 /**
  * Created by soroosh on 12/5/13.
@@ -15,22 +19,32 @@ public class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContext
 
     public static final String SOROOSH = "soroosh";
     public static final String PASS = "123456";
+    public static final String NAME = "name";
+    public static final String LAST_NAME = "lastName";
+    public static final String EMAIL = "email";
+    public static final Date BIRTH_DATE = new Date();
+    public static final Grade ASSOCIATE = Grade.ASSOCIATE;
     @Autowired
     private UserRepository userRepository;
 
     @Test
     public void should_insert_a_user(){
-        User user = new User(SOROOSH, PASS);
+        User user = new User(SOROOSH, PASS, NAME, LAST_NAME, EMAIL, BIRTH_DATE, ASSOCIATE);
         userRepository.saveAndFlush(user);
 
        Assert.assertNotNull(userRepository.findOne(user.getId()));
 
     }
 
+    @Before
+    public void before(){
+        userRepository.deleteAllInBatch();
+    }
+
     @Test
     public void should_insert_a_user_with_authority(){
-        User user = new User(SOROOSH, PASS);
-        User user2 = new User("mehdi", PASS);
+        User user = new User(SOROOSH, PASS, NAME, LAST_NAME, EMAIL, BIRTH_DATE, ASSOCIATE);
+        User user2 = new User("mehdi", PASS, NAME, LAST_NAME, "mehdi@yyy.com", BIRTH_DATE, ASSOCIATE);
         user.addAuthority("ADMIN");
         user2.addAuthority("ADMIN");
 
@@ -44,7 +58,7 @@ public class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContext
 
     @Test
     public void should_find_user_with_all_authority(){
-        User user = new User(SOROOSH, PASS);
+        User user = new User(SOROOSH, PASS, NAME, LAST_NAME, EMAIL, BIRTH_DATE, ASSOCIATE);
         user.addAuthority("ADMIN");
 
         userRepository.saveAndFlush(user);
@@ -56,7 +70,7 @@ public class UserRepositoryTest extends AbstractTransactionalJUnit4SpringContext
     @Test
 
     public void should_remove_authority_of_user(){
-        User user = new User(SOROOSH, PASS);
+        User user = new User(SOROOSH, PASS, NAME, LAST_NAME, EMAIL, BIRTH_DATE, ASSOCIATE);
         user.addAuthority("ADMIN");
         user.addAuthority("G");
         userRepository.saveAndFlush(user);

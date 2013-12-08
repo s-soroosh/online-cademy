@@ -13,14 +13,14 @@ import java.util.Date;
 
 public class Certificate {
     private final AbstractCourse course;
-    private final Student student;
+
     private final Date publishedDate;
     private final Rank rank;
 
-    public Certificate(AbstractCourse course, Student student, Rank rank) {
+    public Certificate(AbstractCourse course, Rank rank) {
         this.publishedDate = new Date();
         this.course = course;
-        this.student = student;
+//        this.student = student;
         this.rank = rank;
     }
 }

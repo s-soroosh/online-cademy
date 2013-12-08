@@ -1,8 +1,6 @@
 package com.sarabadani.onlinecademy.model.course;//import org.slf4j.Logger;
 
 
-import com.sarabadani.onlinecademy.model.student.Student;
-
 /**
  * @author: Soroosh Sarabadani
  * Date: 3/3/13
@@ -12,7 +10,7 @@ import com.sarabadani.onlinecademy.model.student.Student;
 public class WebinarCourse extends AbstractCourse {
     private Integer duration;
 
-    @Override
+  /*  @Override
     public void register(Student student) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
@@ -20,5 +18,5 @@ public class WebinarCourse extends AbstractCourse {
     @Override
     public void unregister(Student student) {
         //To change body of implemented methods use File | Settings | File Templates.
-    }
+    }*/
 }
