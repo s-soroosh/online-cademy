@@ -24,8 +24,8 @@
 <spring:url value="/logout" var="logoutUrl"/>
 
 
-<spring:url value="/resources/sliedshow/js/jquery.slides.min.js" var="slideshowJsUrl"></spring:url>
-<spring:url value="/resources/sliedshow/css/slide.css" var="slideshowCssUrl"></spring:url>
+<spring:url value="/resources/sliedshow/js/jquery.slides.min.js" var="slideshowJsUrl"/>
+<spring:url value="/resources/sliedshow/css/slide.css" var="slideshowCssUrl"/>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -94,7 +94,10 @@
                     </li>
                     <li><a href="faq.html">سوالات رایج</a></li>
                     <li><a href="contact_us.html">تماس با ما</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">کاربران
+
+
+                    <li class="dropdown <c:if test="${not empty error}">open</c:if>"><a href="#" class="dropdown-toggle"
+                                                                                        data-toggle="dropdown">کاربران
                         <b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -115,6 +118,11 @@
                                                 من را به خاطر بسپار
                                                 <input id="remembermeCheckbox" type="checkbox">
                                             </label>
+                                            <c:if test="${not empty error}">
+                                                <label class="alert-danger" id="credentialError">
+                                                        <spring:message code="${error}"></spring:message>
+                                                </label>
+                                            </c:if>
 
 
                                         </form>
@@ -125,7 +133,8 @@
                                 <li><a href="help.html">راهنمایی</a></li>
                             </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
-                                <li><sec:authentication property="principal.username"></sec:authentication> خوش آمدید </li>
+                                <li><sec:authentication property="principal.username"></sec:authentication> خوش آمدید
+                                </li>
                                 <li><a htef="">پروفایل من</a></li>
                                 <li><a href="${logoutUrl}">خروج</a></li>
                             </sec:authorize>
@@ -150,11 +159,11 @@
 <script src="${jqueryJsUrl}"></script>
 <script src="${bootstrapJsUrl}"></script>
 <script src="${customJsUrl}"></script>
-    <!-- SlidesJS Required: Link to jquery.slides.js -->
-    <script src="${slideshowJsUrl}"></script>
-    <!-- End SlidesJS Required -->
-    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
-    <script>
+<!-- SlidesJS Required: Link to jquery.slides.js -->
+<script src="${slideshowJsUrl}"></script>
+<!-- End SlidesJS Required -->
+<!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+<script>
     $(function () {
         $('#slides').slidesjs({
             width: 400,
@@ -162,6 +171,6 @@
             navigation: true
         });
     });
-    </script>
+</script>
 </body>
 </html>

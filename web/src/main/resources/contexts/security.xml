@@ -4,8 +4,12 @@
        xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/" />
+    </bean>
+
     <security:http auto-config="true" use-expressions="true">
-        <security:form-login  authentication-failure-handler-ref=""/>
+        <security:form-login  authentication-failure-handler-ref="failureHandler"/>
         <security:intercept-url pattern="/student/*" access="hasRole('STUDENT') "/>
         <security:intercept-url pattern="/teacher/*" access="hasRole('TEACHER')"/>
         <security:intercept-url pattern="/admin/*" access="hasRole('ADMIN')"/>
