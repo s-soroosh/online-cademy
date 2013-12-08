@@ -47,7 +47,7 @@ public class HomeController {
             return "user.disable";
         }
         else if (exception instanceof DisabledException)  {
-            return "user.blocked";
+            return "user.locked";
         }
         else{
            return "user.unknown";
