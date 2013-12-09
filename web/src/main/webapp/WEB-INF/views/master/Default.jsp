@@ -10,6 +10,7 @@
 
 
 <spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"/>
+<spring:url value="/resources/styles/datepicker.css" var="datePickerCssUrl"/>
 <spring:url value="/resources/bootstrap/css/rtl/bootstrap-rtl.min.css" var="rtlBootstrapCssUrl"/>
 <spring:url value="/resources/bootstrap/css/rtl/bootstrap-responsive-rtl.min.css"
             var="rtlResponsiveBootstrapCssUrl"/>
@@ -18,6 +19,7 @@
 <spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"/>
 <spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"/>
 <spring:url value="/resources/js/jqBootstrapValidation.min.js" var="validationJsUrl"/>
+    <spring:url value="/resources/js/bootstrap-datepicker.js" var="datePickerJsUrl"/>
 <spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"/>
 <spring:url value="/resources/styles/main.css" var="mainCssUrl"/>
 <spring:url value="/j_spring_security_check" var="loginUrl"/>
@@ -45,7 +47,7 @@
     <link href="${rtlResponsiveBootstrapCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${farsiFontsCssUrl}" rel="stylesheet" type="text/css"/>
     <link href="${mainCssUrl}" rel="stylesheet" type="text/css"/>
-
+    <link href="${datePickerCssUrl}" rel="stylesheet" type="text/css"/>
 
     <!-- this line should removed as soon as possible -->
     <link href="${slideshowCssUrl}" rel="stylesheet" type="text/css"/>
@@ -180,18 +182,19 @@
     </div>
 </div>
 
-<div class="modal-body">
+<div>
     <sec:authorize access="isAuthenticated()">
         welcome: <sec:authentication property="principal.username"/>
     </sec:authorize>
     <tiles:insertAttribute name="body"/>
 </div>
 
-<script src="${jqueryJsUrl}"></script>
+
+    <script src="${jqueryJsUrl}"></script>
 <script src="${bootstrapJsUrl}"></script>
 <script src="${customJsUrl}"></script>
 <script src="${validationJsUrl}"></script>
-
+<script src="${datePickerJsUrl}"></script>
 
 <!-- SlidesJS Required: Link to jquery.slides.js -->
 <script src="${slideshowJsUrl}"></script>
@@ -205,6 +208,7 @@
             navigation: true
         });
         $("input").not("[type=submit]").jqBootstrapValidation();
+        $('#dp3').datepicker();
     });
 </script>
 </body>
