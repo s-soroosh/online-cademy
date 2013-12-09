@@ -17,7 +17,7 @@
 <spring:url value="/resources/bootstrap/js/jquery.min.js" var="jqueryJsUrl"/>
 <spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"/>
 <spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"/>
-<spring:url value="/resources/js/jqBootstrapValidation.min.js" var="validationJsUrl"/>
+
 <spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"/>
 <spring:url value="/resources/styles/main.css" var="mainCssUrl"/>
 <spring:url value="/j_spring_security_check" var="loginUrl"/>
@@ -107,47 +107,16 @@
 
                                     <div id="login_form">
                                         <form class="form-inline" method="post" action="${loginUrl}">
-                                            <div class="control-group">
-                                                <label class="control-label">
-                                                آدرس ایمیل
-                                                </label>
-                                                <div class="controls">
-                                                    <input
-                                                        id="email"
-                                                        data-validation-required-message="پر کردن این گزینه ضروریست"
-                                                        type="email" data-validation-email-message="آدرس ایمیل صحیح نیست"
-                                                        class="input-small"
-                                                        placeholder="Email" required
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div class="control-group">
-                                                <label class="control-label">
-                                            رمز عبور
-                                                </label>
-                                                <div class="controls">
-                                                    <input
-                                                        id="password"
-                                                        minlength="6"
-                                                        data-validation-required-message="پر کردن این گزینه ضروریست"
-                                                        data-validation-minlength-message="پسورد خیلی کوتاه است"
-                                                        type="password"
-                                                        class="input-small"
-                                                        placeholder="Password"
-                                                        required
-                                                    />
-
-                                                </div>
-                                            </div>
-
-
-                                            </p>
-                                            <button id="loginbtn" type="submit" class="btn">
-                                                Sign in
+                                            <input id="email" type="text" class="input-small" name="j_username"
+                                                   placeholder="Email">
+                                            <input id="password" type="password" class="input-small" name="j_password"
+                                                   placeholder="Password">
+                                            <button id="loginbtn" type="submit" class="btn" name="submit">
+                                                ورود
                                             </button>
                                             <label class="checkbox" id="rememberme">
-                                                Remember me
-                                                <input id="remembermeCheckbox" type="checkbox" />
+                                                من را به خاطر بسپار
+                                                <input id="remembermeCheckbox" type="checkbox">
                                             </label>
                                             <c:if test="${not empty error}">
                                                 <label class="alert-danger" id="credentialError">
@@ -190,9 +159,6 @@
 <script src="${jqueryJsUrl}"></script>
 <script src="${bootstrapJsUrl}"></script>
 <script src="${customJsUrl}"></script>
-<script src="${validationJsUrl}"></script>
-
-
 <!-- SlidesJS Required: Link to jquery.slides.js -->
 <script src="${slideshowJsUrl}"></script>
 <!-- End SlidesJS Required -->
@@ -204,7 +170,6 @@
             height: 200,
             navigation: true
         });
-        $("input").not("[type=submit]").jqBootstrapValidation();
     });
 </script>
 </body>
