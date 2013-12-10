@@ -17,7 +17,7 @@
     <div class="control-group">
     <label class="control-label">نام </label>
     <div class="controls">
-    <input type="text" name="name" required />
+    <input type="text" maxlength="50" name="name" required />
     <p class="help-block"></p>
     </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="control-group">
     <label class="control-label">آدرس ایمیل</label>
     <div class="controls">
-    <input type="text" name="email" required />
+    <input type="email" name="email" required />
     <p class="help-block"></p>
     </div>
     </div>
@@ -45,10 +45,6 @@
     <p class="help-block"></p>
     </div>
     </div>
-
-
-
-
     <div class="control-group">
     <label class="control-label">تحصیلات </label>
     <div class="controls">

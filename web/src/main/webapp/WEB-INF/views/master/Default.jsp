@@ -2,11 +2,12 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <spring:url value="/resources/yaml/core/iehacks.css" var="iehacksUrl"/>
 <spring:url value="/resources/rtl-support.css" var="rtlSuppotCssUrl"/>
 <spring:url value="/resources/yaml/core/js/yaml-focusfix.js" var="focusfixUrl"/>
 <spring:url value="/resources/bootstrap/css/bootstrap.min.css" var="bootstrapCssUrl"/>
-<spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"/>
+    <spring:url value="/resources/bootstrap/css/bootstrap-responsive.min.css" var="responsiveBootstrapCssUrl"/>
 
 
 <spring:url value="/resources/bootstrap/css/rtl/rtl.css" var="rtlCssUrl"/>
