@@ -1,5 +1,7 @@
 package com.sarabadani.onlinecademy.web.mvc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.LockedException;
@@ -21,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class HomeController {
+
+    private Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @RequestMapping("/")
     public String home(HttpServletRequest request,HttpServletResponse response,ModelMap model) {
@@ -50,6 +54,7 @@ public class HomeController {
             return "user.locked";
         }
         else{
+            logger.error(exception.getClass().getName() + " occured");
            return "user.unknown";
         }
        /* else {

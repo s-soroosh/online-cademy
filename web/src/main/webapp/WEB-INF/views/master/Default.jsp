@@ -116,7 +116,8 @@
                                                 </label>
                                                 <div class="controls">
                                                     <input
-                                                        id="email"
+                                                         id="email"
+                                                        name="j_username"
                                                         data-validation-required-message="پر کردن این گزینه ضروریست"
                                                         type="email" data-validation-email-message="آدرس ایمیل صحیح نیست"
                                                         class="input-small"
@@ -131,6 +132,7 @@
                                                 <div class="controls">
                                                     <input
                                                         id="password"
+                                                        name="j_password"
                                                         minlength="6"
                                                         data-validation-required-message="پر کردن این گزینه ضروریست"
                                                         data-validation-minlength-message="پسورد خیلی کوتاه است"
