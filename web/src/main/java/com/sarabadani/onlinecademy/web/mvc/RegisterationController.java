@@ -29,9 +29,9 @@ public class RegisterationController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(String username,String password,String name, String lastName, String email, Date birthDate, Grade grade) {
-        User user = new User(username,password, name, lastName, email, birthDate, grade);
+    public String register(String username, String password, String name, String lastName, String email, Date birthDate, Grade grade) {
+        User user = new User(username, password, name, lastName, email, birthDate, grade);
         System.out.println(user);
-
+        return "Register";
     }
 }

@@ -13,14 +13,14 @@ import java.util.Date;
 public class DateConverter implements Converter<String, Date> {
     @Override
     public Date convert(String s) {
-        String[] parts = s.split("/");
+        String[] parts = s.split("-");
 
-        final int year = Integer.parseInt(parts[0]);
-        final int month = Integer.parseInt(parts[1]);
-        final int days = Integer.parseInt(parts[2]);
+        final int month = Integer.parseInt(parts[0]);
+        final int day = Integer.parseInt(parts[1]);
+        final int year = Integer.parseInt(parts[2]);
 
         System.out.println("DateConverter:converting from "+s );
 
-        return new Date(year, month, days);
+        return new Date(year, month, day);
     }
 }
