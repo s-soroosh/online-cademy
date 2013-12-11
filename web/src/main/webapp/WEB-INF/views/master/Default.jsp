@@ -20,10 +20,10 @@
 <spring:url value="/resources/bootstrap/js/bootstrap.min.js" var="bootstrapJsUrl"/>
 <spring:url value="/resources/bootstrap/js/boot-business.js" var="customJsUrl"/>
 <spring:url value="/resources/js/jqBootstrapValidation.min.js" var="validationJsUrl"/>
-    <spring:url value="/resources/js/bootstrap-datepicker.js" var="datePickerJsUrl"/>
+<spring:url value="/resources/js/bootstrap-datepicker.js" var="datePickerJsUrl"/>
 <spring:url value="/resources/fonts/Fonts.css" var="farsiFontsCssUrl"/>
 <spring:url value="/resources/styles/main.css" var="mainCssUrl"/>
-<spring:url value="/j_spring_security_check" var="loginUrl"/>
+<spring:url value="/j_spring_security_check?path=${currentPath}" var="loginUrl"/>
 <spring:url value="/logout" var="logoutUrl"/>
 
 

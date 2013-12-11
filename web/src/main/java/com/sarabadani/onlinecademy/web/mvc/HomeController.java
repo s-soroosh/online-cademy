@@ -28,39 +28,8 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(HttpServletRequest request,HttpServletResponse response,ModelMap model) {
-        Object lastException =  request.getSession().getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-        if(lastException != null) {
-
-            model.addAttribute("error",createMessageFromError((AuthenticationException)lastException));
-            request.getSession().removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-        }
-        else{
-            model.addAttribute("error","");
-        }
-
-        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if(authentication.isAuthenticated()) System.out.println(authentication.getPrincipal());
         return "Index";
     }
 
-    String createMessageFromError(AuthenticationException exception){
-        if(exception instanceof BadCredentialsException){
-            return "user.credential";
-        }
-        else if (exception instanceof LockedException){
-            return "user.disable";
-        }
-        else if (exception instanceof DisabledException)  {
-            return "user.locked";
-        }
-        else{
-            logger.error(exception.getClass().getName() + " occured");
-           return "user.unknown";
-        }
-       /* else {
-            return "other issues";
-        }*/
-
-    }
 }
 

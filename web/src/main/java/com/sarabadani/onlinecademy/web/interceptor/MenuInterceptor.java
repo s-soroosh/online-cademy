@@ -1,4 +1,4 @@
-package com.sarabadani.onlinecademy.web.interceptors;
+package com.sarabadani.onlinecademy.web.interceptor;
 
 
 import org.slf4j.Logger;
@@ -27,6 +27,7 @@ public class MenuInterceptor implements WebRequestInterceptor {
 
     @Override
     public void postHandle(WebRequest webRequest, ModelMap modelMap) throws Exception {
+
 
         logger.info("Post handling of the request");
         if (modelMap != null) {
